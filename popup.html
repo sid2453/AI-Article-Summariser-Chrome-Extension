@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI Summariser</title>
+        <style>
+            /* Basic Reset and AI-Inspired Theme */
+            body {
+                width: 350px; /* Slightly wider for better layout */
+                height: auto;
+                min-height: 250px;
+                background-color: #1a1a2e; /* Deep space blue/AI background */
+                color: #e0e0f8; /* Light, futuristic text */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px; /* Spacing between elements */
+            }
+
+            /* Header Title (optional, but good for style) */
+            h1 {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+                color: #82aaff; /* A vibrant accent color */
+                border-bottom: 1px solid #2e2e4e;
+                padding-bottom: 5px;
+            }
+
+            /* Controls Group */
+            .controls-group {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            /* Select Dropdown */
+            #summary-type {
+                flex-grow: 1; /* Make the select box fill available space */
+                padding: 10px 15px;
+                border: 1px solid #4a4a6e;
+                border-radius: 8px; /* Slightly rounded corners */
+                background-color: #2e2e4e; /* Darker control background */
+                color: #e0e0f8;
+                appearance: none; /* Remove default styling */
+                font-size: 1em;
+                cursor: pointer;
+                transition: border-color 0.3s;
+            }
+
+            #summary-type:focus {
+                border-color: #82aaff; /* Highlight on focus */
+                outline: none;
+            }
+
+            /* Buttons */
+            button {
+                padding: 10px 18px;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.1s;
+                font-size: 0.95em;
+            }
+
+            /* Summarise Button - Primary AI Action */
+            #summarise {
+                background: linear-gradient(45deg, #82aaff, #4e7ac7); /* Blue gradient for action */
+                color: #1a1a2e;
+            }
+
+            #summarise:hover {
+                background: linear-gradient(45deg, #9bbdff, #5c8ae8);
+                transform: translateY(-1px);
+            }
+
+            /* Copy Button - Secondary Action */
+            #copy {
+                background-color: #4a4a6e; /* Muted gray for secondary action */
+                color: #e0e0f8;
+            }
+
+            #copy:hover {
+                background-color: #5c5c82;
+            }
+
+            /* Summary Output Area (Pre tag) */
+            #summary {
+                background-color: #2e2e4e; /* Dark container */
+                color: #b0b0d0; /* Slightly desaturated text for output */
+                padding: 15px;
+                border-radius: 8px;
+                border: 1px solid #4a4a6e;
+                white-space: pre-wrap; /* Preserve formatting but wrap long lines */
+                max-height: 150px; /* Limit height */
+                overflow-y: auto; /* Allow scrolling */
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            /* Custom Scrollbar for sleekness (Chrome/Edge/Safari) */
+            #summary::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            #summary::-webkit-scrollbar-thumb {
+                background-color: #4a4a6e;
+                border-radius: 10px;
+            }
+
+            #summary::-webkit-scrollbar-track {
+                background: #2e2e4e;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>AI Article Summariser</h1>
+        
+        <div class="controls-group">
+            <select id="summary-type">
+                <option value="brief">Brief</option>
+                <option value="detailed">Detailed</option> 
+            </select>
+            <button id="summarise">Summarise</button>
+            <button id="copy">Copy</button>
+        </div>
+
+        <pre id="summary">Select a type and click summarise</pre>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

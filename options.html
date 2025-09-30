@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <style>
+        body {
+            background-color: #1a1a2e; /* same deep space blue */
+            color: #e0e0f8; /* same light futuristic text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            color: #82aaff; /* same accent color */
+            border-bottom: 1px solid #2e2e4e;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        input[type="text"] {
+            padding: 14px 12px;
+            border-radius: 8px;
+            border: 1px solid #4a4a6e;
+            background-color: #2e2e4e;
+            color: #e0e0f8;
+            font-size: 1em;
+        }
+
+        input[type="text"]:focus {
+            border-color: #82aaff;
+            outline: none;
+        }
+
+        pre {
+            background-color: #2e2e4e;
+            color: #b0b0d0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #4a4a6e;
+            white-space: pre-wrap;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        a {
+            color: #82aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 14px;
+            font-weight: bold;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            background: linear-gradient(45deg, #82aaff, #4e7ac7);
+            color: #1a1a2e;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #9bbdff, #5c8ae8);
+            transform: translateY(-1px);
+        }
+
+        .success-message {
+            color: #4ef08d;
+            font-weight: bold;
+            display: none;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Summary Settings</h1>
+        <div class="form-group">
+            <label for="api-key">Gemini API Key</label>
+            <input type="text" id="api-key" placeholder="Enter your gemini API key"/>
+            <pre>
+You can get your API key from here:
+<a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>
+            </pre>
+        </div>
+        <button id="save-button">Save Settings</button>
+        <p id="success-message" class="success-message">Settings saved successfully</p>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>
