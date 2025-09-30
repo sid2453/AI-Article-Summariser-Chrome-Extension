@@ -21,7 +21,7 @@ Installation
 
 1.Clone the repository: git clone https://github.com/<your-username\>/<repo-name\>.git\
 2. Open Chrome and navigate to chrome://extensions/\
-3. Enable Developer mode
+3. Enable Developer mode\
 4. Click Load unpacked and select the project folder
 
 
